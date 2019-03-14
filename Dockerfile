@@ -1,8 +1,9 @@
 FROM centos:latest
 LABEL  Jack <jack@lavnet.net>
 
-# add epel repo
-RUN yum -y install epel-release
+RUN yum -y install epel-release && \
+    yum -y update && \
+    yum -y clean all
 
 # update
 RUN yum -y update
